@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        h1{
+            text-align:center;
+            font-family: Arial;
+            color:white;
+        }
+        body{
+            background-color:black;
+        }
+        #jo{
+            border-radius:20px;
+            font-family:arial;
+            font-size:15px;
+        }
+        h2{
+            color:white;
+            font-family:arial;
+            text-align:center;
+        }
+        .hi{
+display: flex;
+justify-content: center; /* Centers horizontally */
+align-items: center; /* Centers vertically */
+height: 10vh; /* Full viewport height */
+        }
+        .bymyself{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height=10vh;
+        }
+    </style>
+</head>
+<body>
+<h1>THE RRAR<br>RANDOM RANDOM AND MORE RANDOM</h1>
+<div class="hi">
+<button id="jo" onclick="window.open('https://sites.google.com/eufsdk12.org/rrar-patreon-page/home')">For more info check out our patreon page!</button>
+</div><br>
+<h2>Random Number Generator</h2>
+<div class="hi">
+    <button id="jo" onclick="randomnumber()">Press for a random number!</button>
+</div><br>
+<h2>Random Wiki Page Generator</h2><br>
+<div class="hi">
+    <button onclick="randomwiki()"  id="jo">press for a random wiki page</button>
+</div><br>
+<div class="bymyself">
+    <iframe id="wassup" width="800" height="500">Wiki Page</iframe>
+    
+</div>
+    <h2>Random Coin Flip</h2>
+    <div class="hi">
+ <button id="jo" onclick="coinflip()">click to flip a coin</button>
+    </div><br><br><br><br><br><br>
+    <div class="hi">
+    <img src="coin.jpeg" id="coin" width="300">
+    </div>
+</body>
+<script>
+function coinflip() {
+    const coin = document.getElementById('coin');
+
+    // show flipping GIF
+    coin.src = "coinflip.gif";
+
+    // wait 3 seconds, then decide result
+    setTimeout(function() {
+        decidewhowins();
+    }, 3000);
+}
+
+function decidewhowins() {
+    const choice = Math.random();
+    const coin = document.getElementById('coin');
+
+    let result;
+
+    if (choice < 0.5) {
+        result = "heads";
+         coin.src = "heads.jpeg";   
+    } else {
+        result = "tails";
+        coin.src = "tails.jpeg";
+    }
+
+    
+}
+function randomnumber(){
+    const poop = Math.random();
+ const number = Math.floor(poop * 100);
+    alert('your random number is ' + number);
+}
+function randomwiki(){
+    const choices = [
+        "Project_UFO_(2025_TV_series)",
+        "Kadudeh",
+        "Habshan–Fujairah_oil_pipeline",
+        "Kenneth_Hall",
+        "Luka_Zarić",
+        "Jagadhri",
+        "Oda_Nobunaga",
+        "Horatio_Caine",
+        "1937_Ligas_Provinciales_de_Lima_y_Callao"
+    ];
+
+    const index = Math.floor(Math.random() * choices.length);
+    const chosen = choices[index];
+
+    let wer = document.getElementById('wassup');
+    wer.src = 'https://en.wikipedia.org/wiki/' + chosen;
+}
+</script>
+</html>
